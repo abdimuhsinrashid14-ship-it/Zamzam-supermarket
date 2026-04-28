@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Shop</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: black;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      text-align: center;
+    }
+
+    button {
+      background: green;
+      color: white;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #cart {
+      background: white;
+      padding: 15px;
+      margin: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>My E-Commerce Shop</h1>
+</header>
+
+<div class="products">
+  <div class="product">
+    <h3>Product 1</h3>
+    <p>Ksh 500</p>
+    <button onclick="addToCart('Product 1')">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h3>Product 2</h3>
+    <p>Ksh 1000</p>
+    <button onclick="addToCart('Product 2')">Add to Cart</button>
+  </div>
+</div>
+
+<div id="cart">
+  <h2>Cart</h2>
+  <ul id="cart-items"></ul>
+</div>
+
+<script>
+  function addToCart(product) {
+    let li = document.createElement("li");
+    li.textContent = product;
+    document.getElementById("cart-items").appendChild(li);
+  }
+</script>
+
+</body>
+</html>
